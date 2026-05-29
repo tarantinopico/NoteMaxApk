@@ -206,7 +206,7 @@ fun NoteGrid(
                 onClick = { onNoteClick(note) },
                 onLongClick = { onNoteLongClick(note) },
                 onSwipeToDelete = { onSwipeToDelete(note) },
-                modifier = Modifier.animateItemPlacement()
+                modifier = Modifier.animateItem()
             )
         }
     }
@@ -246,7 +246,7 @@ fun SearchResultsGrid(
                 onClick = { onNoteClick(note) },
                 onLongClick = { onNoteLongClick(note) },
                 onSwipeToDelete = { onSwipeToDelete(note) },
-                modifier = Modifier.animateItemPlacement()
+                modifier = Modifier.animateItem()
             )
         }
     }

@@ -82,7 +82,7 @@ fun NoteCard(
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(16.dp))
                     .glassSurface(
-                        backgroundColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f) else Color.White.copy(alpha = 0.2f),
+                        tint = if (isSelected) MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f) else Color.White.copy(alpha = 0.2f),
                         borderColor = if (isSelected) MaterialTheme.colorScheme.primary else Color.White.copy(alpha = 0.3f)
                     )
                     .combinedClickable(

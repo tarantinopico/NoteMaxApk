@@ -2,13 +2,14 @@ package com.example.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Primary = Color(0xFF6C63FF)
-val PrimaryDark = Color(0xFF8A84FF)
-val Secondary = Color(0xFF03DAC5)
-val BackgroundLight = Color(0xFFF3F4F6)
-val BackgroundDark = Color(0xFF1E1E1E)
-val SurfaceLightGlass = Color(0xE6FFFFFF)
-val SurfaceDarkGlass = Color(0x33FFFFFF)
-val TextPrimaryLight = Color(0xFF121212)
-val TextPrimaryDark = Color(0xFFE0E0E0)
+val Primary = Color(0xFF007AFF)
+val PrimaryDark = Color(0xFF0A84FF)
+val Secondary = Color(0xFF5856D6)
+val BackgroundLight = Color(0xFFF2F2F7)
+val BackgroundDark = Color(0xFF000000)
+val SurfaceLightGlass = Color(0xCCFFFFFF)
+val SurfaceDarkGlass = Color(0x401C1C1E)
+val TextPrimaryLight = Color(0xFF000000)
+val TextPrimaryDark = Color(0xFFFFFFFF)
+val Danger = Color(0xFFFF3B30)
 
