@@ -15,7 +15,7 @@ object DatabaseModule {
             NoteMaxDatabase::class.java,
             Constants.DATABASE_NAME
         )
-        .addMigrations(NoteMaxDatabase.MIGRATION_1_2)
+        // .addMigrations(NoteMaxDatabase.MIGRATION_1_2)
         .fallbackToDestructiveMigration(dropAllTables = true)
         .build()
     }

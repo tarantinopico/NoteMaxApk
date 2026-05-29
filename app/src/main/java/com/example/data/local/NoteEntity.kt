@@ -28,6 +28,7 @@ data class NoteEntity(
     val folderId: UUID? = null,
     val tags: List<String> = emptyList(),
     val isLocked: Boolean = false,
+    val drawingData: String? = null,
     val createdAt: Long = System.currentTimeMillis(),
     val modifiedAt: Long = System.currentTimeMillis(),
     val pinned: Boolean = false,

@@ -3,9 +3,9 @@ package com.example.ui.theme
 import androidx.compose.ui.graphics.Color
 
 val LightBackground = Color(0xFFF2F2F7)
-val LightCardBackground = Color(0xCCFFFFFF)
+val LightCardBackground = Color(0xFFFFFFFF)
 val DarkBackground = Color(0xFF000000)
-val DarkCardBackground = Color(0x991C1C1E)
+val DarkCardBackground = Color(0xFF1C1C1E)
 
 val PrimaryAccent = Color(0xFF007AFF)
 val Danger = Color(0xFFFF3B30)

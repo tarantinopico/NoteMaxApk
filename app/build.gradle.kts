@@ -99,7 +99,6 @@ dependencies {
   // implementation(libs.firebase.ai)
   implementation(libs.kotlinx.coroutines.android)
   implementation(libs.kotlinx.coroutines.core)
-  implementation(libs.kotlinx.serialization.json)
   implementation(libs.markwon.core)
   implementation(libs.security.crypto)
   implementation(libs.logging.interceptor)

@@ -1,11 +1,8 @@
 package com.example
 
 import android.app.Application
-import com.example.data.local.NoteMaxDatabase
-import com.example.data.repository.NoteRepositoryImpl
-import com.example.domain.repository.NoteRepository
-import com.example.util.Constants
-import androidx.room.Room
+import com.example.di.DatabaseModule
+import com.example.di.RepositoryModule
 
 class NoteMaxApplication : Application() {
     companion object {
@@ -14,18 +11,14 @@ class NoteMaxApplication : Application() {
     }
     
     val database by lazy {
-        Room.databaseBuilder(
-            this,
-            NoteMaxDatabase::class.java,
-            Constants.DATABASE_NAME
-        )
-        .addMigrations(NoteMaxDatabase.MIGRATION_1_2)
-        .fallbackToDestructiveMigration(dropAllTables = true)
-        .build()
+        DatabaseModule.provideNoteMaxDatabase(this)
     }
-    
-    val repository: NoteRepository by lazy {
-        NoteRepositoryImpl(database.folderDao(), database.noteDao())
+
+    val repository by lazy {
+        RepositoryModule.provideNoteRepository(
+            folderDao = database.folderDao(),
+            noteDao = database.noteDao()
+        )
     }
 
     override fun onCreate() {
@@ -33,4 +26,3 @@ class NoteMaxApplication : Application() {
         instance = this
     }
 }
-

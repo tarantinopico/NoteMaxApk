@@ -1,8 +1,6 @@
 package com.example.util
 
 import androidx.room.TypeConverter
-import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 import java.util.UUID
 
 class Converters {
@@ -18,11 +16,12 @@ class Converters {
 
     @TypeConverter
     fun fromStringList(list: List<String>?): String {
-        return list?.let { Json.encodeToString(it) } ?: "[]"
+        return list?.joinToString(separator = "||") ?: ""
     }
 
     @TypeConverter
     fun toStringList(data: String?): List<String> {
-        return data?.let { Json.decodeFromString(it) } ?: emptyList()
+        if (data.isNullOrEmpty()) return emptyList()
+        return data.split("||")
     }
 }
