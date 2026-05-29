@@ -20,7 +20,12 @@ interface NoteDao {
     @Query("SELECT * FROM notes WHERE id = :id")
     suspend fun getNoteByIdOnce(id: UUID): NoteEntity?
 
-    @Query("SELECT * FROM notes WHERE title LIKE '%' || :query || '%' OR content LIKE '%' || :query || '%' ORDER BY title ASC")
+    @Query("""
+        SELECT notes.* FROM notes
+        JOIN notes_fts ON notes.rowid = notes_fts.rowid
+        WHERE notes_fts MATCH :query
+        ORDER BY notes.title ASC
+    """)
     fun searchNotes(query: String): Flow<List<NoteEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
